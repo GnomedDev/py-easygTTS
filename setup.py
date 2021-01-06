@@ -1,0 +1,25 @@
+from distutils.core import setup
+setup(
+    name = 'easygTTS',
+    packages = ['easygTTS'],
+    version = '1.0',
+    license='MIT',
+    description = 'Easy async interface to easy-gtts-api',
+    author = 'Gnome-py',
+    author_email = 'gnome6669.py@gmail.com',
+    url = 'https://github.com/gnome-py/py-easygTTS',
+    download_url = 'https://github.com/user/reponame/archive/v_01.tar.gz',
+    keywords = ['async', 'TTS', 'gtts', 'text to speech'],
+    install_requires=['aiohttp'],
+    classifiers=[
+    'Development Status :: 5 - Production/Stable',
+    'Intended Audience :: Developers',
+    'Topic :: Software Development :: Build Tools',
+    'License :: OSI Approved :: MIT License',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    ],
+)   
