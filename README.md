@@ -12,12 +12,15 @@ import asyncio
 
 async def main():
     async with easygTTS.gtts() as gtts:
-        hello_uk = await gtts.get(text="Hello United Kingdom", lang="en-uk")
-        hello_usa = await gtts.get(text="Hello USA", lang="en")
+        hello_uk = await gtts.get(text="Hello World", lang="en-uk")
+        hello_usa = await gtts.get(text="Hello World", lang="en-us")
         langs = await gtts.langs()
 
-    with open("u, "wb") as f:
+    with open("Hello World (UK).mp3", "wb") as f:
         f.write(hello_uk)
+    with open("Hello World (USA).mp3", "wb") as f:
+        f.write(hello_usa)
+    print(f"Returned langs = {langs}")
 
 asyncio.run(main())
 ```
@@ -32,10 +35,14 @@ async def main():
     session = aiohttp.ClientSession()
     gtts = easygTTS.gtts(session=session)
 
-    await gtts.get(text="Hello World")
+    hello = await gtts.get(text="Hello World")
+    with open("Hello.mp3", "wb") as f:
+        f.write(hello)
 
     # later in your code
-    await gtts.get(text="even more to TTS")
+    extra = await gtts.get(text="even more to TTS")
+    with open("Extra.mp3", "wb") as f:
+        f.write(extra)
 
     # at the end
     await session.close()
